@@ -1,0 +1,39 @@
+<h1>Carnet d'adresses partagé</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom & Prénom</th>
+      <th>E-mail</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of contacts">
+      <td>{{c.id}}</td>
+      <td>{{c.nom}} {{c.prenom}}</td>
+      <td>{{c.email}}</td>
+      <td>
+        <a href="#" (click)="details(c)" class="btn btn-info">Détails</a>
+        <a href="#" (click)="supprimer(c)" class="btn btn-info">Supp.</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="panel panel-info" *ngIf="unContact">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{unContact.nom}} {{unContact.prenom}}</h3>
+    </div>
+    <div class="panel-body">
+      ID : {{unContact.id}}<br/>
+      Pays : {{unContact.pays}}<br/>
+      Ville : {{unContact.ville}}<br/>
+      Remarques : {{unContact.remarques}}<br/>
+    </div>
+</div>
+
+
+<h1>Fin</h1>
